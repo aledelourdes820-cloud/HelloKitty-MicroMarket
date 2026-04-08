@@ -22,3 +22,4 @@ Datos de prueba: src/main/resources/data.sql (temática Sanrio / Hello Kitty).
 
 Git: usar Conventional Commits (feat:, fix:, docs:, refactor:), ramas main / develop / feature/*,
 y Pull Requests sin merge directo a main, según el enunciado del proyecto.
+Documentacion actualizada para la entrega final
