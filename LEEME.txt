@@ -1,0 +1,24 @@
+Hello Kitty MicroMarket — API REST (Spring Boot 3, Java 17, MySQL)
+================================================================
+
+Requisitos: JDK 17+, MySQL 8+, Maven 3.9+ (o usar el empaquetado desde tu IDE).
+
+1) Crear la base de datos (opcional; la URL puede crearla si el usuario tiene permiso):
+   CREATE DATABASE hellokitty_micromarket CHARACTER SET utf8mb4;
+
+2) Ajustar usuario y contraseña en:
+   src/main/resources/application.yml
+   (por defecto: usuario root, contraseña root).
+
+3) Compilar y ejecutar:
+   mvn spring-boot:run
+
+4) Importar en Postman:
+   postman/HelloKitty-MicroMarket.postman_collection.json
+
+5) Endpoints base: http://localhost:8080/api/...
+
+Datos de prueba: src/main/resources/data.sql (temática Sanrio / Hello Kitty).
+
+Git: usar Conventional Commits (feat:, fix:, docs:, refactor:), ramas main / develop / feature/*,
+y Pull Requests sin merge directo a main, según el enunciado del proyecto.

@@ -1,0 +1,209 @@
+{
+  "info": {
+    "name": "Hello Kitty MicroMarket API",
+    "description": "Colección de prueba — Boutique Sanrio (MicroMarket). Base URL: http://localhost:8080",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Categorías",
+      "item": [
+        {
+          "name": "Listar categorías",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/categorias"
+          }
+        },
+        {
+          "name": "Categoría con productos (id=1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/categorias/1"
+          }
+        },
+        {
+          "name": "Crear categoría",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Dulces kawaii\",\n  \"descripcion\": \"Galletas y chocolates con empaque Hello Kitty\"\n}"
+            },
+            "url": "{{baseUrl}}/api/categorias"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Productos",
+      "item": [
+        {
+          "name": "Listar productos activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/productos"
+          }
+        },
+        {
+          "name": "Obtener producto",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/productos/1"
+          }
+        },
+        {
+          "name": "Crear producto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Taza Hello Kitty rosa\",\n  \"codigoBarras\": \"8809998887776\",\n  \"precio\": 45900,\n  \"stock\": 30,\n  \"categoriaId\": 3\n}"
+            },
+            "url": "{{baseUrl}}/api/productos"
+          }
+        },
+        {
+          "name": "Borrado lógico producto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/productos/3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Proveedores",
+      "item": [
+        {
+          "name": "Listar proveedores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/proveedores"
+          }
+        },
+        {
+          "name": "Crear proveedor",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Keroppi Fresh Foods\",\n  \"nit\": \"901555444-2\",\n  \"telefono\": \"+57-1-5550199\"\n}"
+            },
+            "url": "{{baseUrl}}/api/proveedores"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Abastecimiento",
+      "item": [
+        {
+          "name": "Entrada de almacén",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productoId\": 1,\n  \"proveedorId\": 1,\n  \"cantidad\": 10\n}"
+            },
+            "url": "{{baseUrl}}/api/abastecimiento/entrada"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Empleados",
+      "item": [
+        {
+          "name": "Listar todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/empleados"
+          }
+        },
+        {
+          "name": "Filtrar por cargo CAJERO",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/empleados?cargo=CAJERO"
+          }
+        },
+        {
+          "name": "Filtrar por rango de fechas ingreso",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/empleados?fechaInicio=2024-01-01&fechaFin=2024-12-31"
+          }
+        },
+        {
+          "name": "Crear empleado",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cedula\": \"1000999000\",\n  \"nombre\": \"Pompompurin Cajero\",\n  \"cargo\": \"CAJERO\",\n  \"fechaIngreso\": \"2025-01-20\",\n  \"salario\": 1750000\n}"
+            },
+            "url": "{{baseUrl}}/api/empleados"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ventas",
+      "item": [
+        {
+          "name": "Obtener venta 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/ventas/1"
+          }
+        },
+        {
+          "name": "Registrar venta",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"empleadoId\": 2,\n  \"items\": [\n    { \"productoId\": 1, \"cantidad\": 1 }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/ventas"
+          }
+        },
+        {
+          "name": "Venta con stock insuficiente (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"empleadoId\": 2,\n  \"items\": [\n    { \"productoId\": 1, \"cantidad\": 99999 }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/ventas"
+          }
+        }
+      ]
+    }
+  ]
+}
