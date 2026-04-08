@@ -32,12 +32,6 @@ Postman, asegurando respuestas correctas (como el código 201 Created) y mensaje
 claros cuando el stock es insuficiente.
 
 🌸 Mi Objetivo
-
-Mi meta con este MicroMarket fue demostrar que el desarrollo de software puede ser 
-técnicamente riguroso sin perder la esencia y la estética. Es un sistema pequeño en 
-escala, pero grande en organización y buenas prácticas de ingeniería.
-
-🌸 Mi Objetivo
 Mi meta con este MicroMarket fue demostrar que el desarrollo de software puede ser 
 técnicamente riguroso sin perder la esencia y la estética. Es un sistema pequeño en 
 escala, pero grande en organización y buenas prácticas de ingeniería.
